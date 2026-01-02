@@ -1,0 +1,17 @@
+/* .vitepress/theme/style.css */
+
+:root {
+  --vp-c-brand-1: #3451b2;
+  --vp-c-brand-2: #3a5ccc;
+  --vp-c-brand-3: #5672cd;
+}
+
+.vp-doc table {
+    display: table;
+    width: 100%;
+}
+
+.vp-doc tr:nth-child(2n) {
+    background-color: var(--vp-c-bg-soft);
+}
+
