@@ -1,9 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { withBase } from 'vitepress'
 
 const props = defineProps({
   src: String
 })
+
+const audioSrc = computed(() => withBase(props.src))
 
 const audioRef = ref(null)
 const isPlaying = ref(false)
@@ -26,7 +29,7 @@ const onEnded = () => {
 
 <template>
   <div class="audio-btn-container">
-    <audio ref="audioRef" :src="src" @ended="onEnded" class="hidden-audio"></audio>
+    <audio ref="audioRef" :src="audioSrc" @ended="onEnded" class="hidden-audio"></audio>
     <button @click="togglePlay" class="play-btn" :class="{ 'playing': isPlaying }">
       <span v-if="!isPlaying" class="icon">▶</span>
       <span v-else class="icon">⏸</span>
