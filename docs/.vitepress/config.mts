@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/my_oral_english_book/',
   title: "My Oral English Book",
   description: "A journey of speaking what I want to say.",
   themeConfig: {
